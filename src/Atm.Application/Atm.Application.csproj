@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EDC4939-BF9E-4171-B426-576B16DAEB96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atm.Application</RootNamespace>
+    <AssemblyName>Atm.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GlobalAssemblyVersionInfo.cs">
+      <Link>Properties\GlobalAssemblyVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="IOperationJournalService.cs" />
+    <Compile Include="IAccountService.cs" />
+    <Compile Include="AccountService.cs" />
+    <Compile Include="OperationJournalService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="AtmCardService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IAtmCardService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atm.Core\Atm.Core.csproj">
+      <Project>{A96CB3A1-91D8-46CB-A289-1F56139B7B5F}</Project>
+      <Name>Atm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atm.Data\Atm.Data.csproj">
+      <Project>{153aca50-45e7-4f15-aabc-bb81ad85d1a0}</Project>
+      <Name>Atm.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrossCutting.Core\CrossCutting.Core.csproj">
+      <Project>{c9213684-eab1-4c17-9313-534709c4fcb6}</Project>
+      <Name>CrossCutting.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

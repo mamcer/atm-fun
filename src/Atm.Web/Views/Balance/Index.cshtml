@@ -1,0 +1,37 @@
+﻿@model Atm.Web.Models.BalanceViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Balance</h2>
+
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.CardNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CardNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Date)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Date)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Amount)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Amount)
+    </dd>
+</dl>
+
+<input type="button" value="Back" class="btn btn-default" onclick="location.href='/Operation/Index'" />
+<input type="button" value="Exit" class="btn btn-danger" onclick="location.href='@Url.Action("Logout", "Home")'" />

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Operations</h2>
+
+<p>Welcome <strong>@ViewBag.UserName</strong></p>
+
+<input type="button" value="Balance" onclick="location.href='@Url.Action("Index", "Balance")'" id="balance" class="btn btn-sm btn-primary" />
+<br />
+<br />
+<input type="button" value="Withdrawal" onclick="location.href='@Url.Action("Index", "Withdrawal")'" id="withdrawal" class="btn btn-sm btn-primary" />
+<br />
+<br />
+<input type="button" value="Exit" class="btn btn-danger" onclick="location.href='@Url.Action("Logout", "Home")'"/>

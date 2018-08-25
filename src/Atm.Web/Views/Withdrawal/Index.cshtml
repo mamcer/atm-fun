@@ -1,0 +1,35 @@
+﻿@model Atm.Web.Models.WithdrawalActionViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Withdrawal</h2>
+
+<p>Please enter the amount to be withdrawn</p>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorFor(model => model.Amount)
+    @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <input type="submit" value="Ok" class="btn btn-success" />
+    <input type="button" value="Clear" class="btn btn-default" onclick="javascript:clearAmount()"/>
+    <input type="button" value="Exit" class="btn btn-danger" onclick="location.href='@Url.Action("Logout", "Home")'" />
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("#Amount").focus();
+
+        function clearAmount() {
+            $("#Amount").val("0");
+        }
+    </script>
+}

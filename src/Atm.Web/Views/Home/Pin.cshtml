@@ -1,0 +1,33 @@
+﻿@model Atm.Web.Models.PinViewModel
+
+@{
+    ViewBag.Title = "Pin";
+}
+
+<h2>Pin</h2>
+
+<p>Please enter your pin number</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorFor(model => model.Pin)
+    @Html.ValidationMessageFor(model => model.Pin, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <input type="submit" value="Ok" class="btn btn-success" />
+    <input type="button" value="Clear" class="btn btn-default" onclick="javascript:clearPin()"/>
+    <input type="button" value="Exit" class="btn btn-default" onclick="location.href='/'"/>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("#Pin").focus();
+
+        function clearPin() {
+            $("#Pin").val("");
+        }
+    </script>
+}

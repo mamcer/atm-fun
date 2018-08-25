@@ -1,0 +1,34 @@
+﻿@model Atm.Web.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome</h2>
+
+<p>Please enter your Card Number</p>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorFor(model => model.CardNumber)
+    @Html.ValidationMessageFor(model => model.CardNumber, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <input type="submit" value="Ok" class="btn btn-success" />
+    <input type="button" value="Clear" class="btn btn-default" onclick="javascript:clearCardNumber()"/>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("#CardNumber").focus();
+
+        function clearCardNumber() {
+            $("#CardNumber").val("");
+        }
+    </script>
+}

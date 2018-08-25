@@ -1,0 +1,48 @@
+﻿@model Atm.Web.Models.WithdrawalResultViewModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountWithdraw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountWithdraw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <input type="button" value="Back" class="btn btn-default" onclick="location.href='/Operation/Index'" />
+    <input type="button" value="Exit" class="btn btn-danger" onclick="location.href='@Url.Action("Logout", "Home")'" />
+</p>
