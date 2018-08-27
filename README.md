@@ -14,8 +14,13 @@ The core functionality and entities are almost untouch (very basic). I have then
 - log4net
 - SQL Server 2016
 
+## Screenshot
+
+![screenshot](https://raw.githubusercontent.com/mamcer/atm-fun/master/doc/screenshot.png)
+
 ## Live Demo
 
 A live demo version of the application is hosted in Azure
 
-[http://atmfun.azurewebsites.net/](http://atmfun.azurewebsites.net/)
+[http://atmfun.azurewebsites.net/](http://atmfun.azurewebsites.net/)  
+123/1234
