@@ -239,4 +239,4 @@ coverage-report/
 .sonar/
 *.jfm
 .sonarqube/
-
+.sonarlint/
