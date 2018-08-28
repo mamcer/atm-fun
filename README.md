@@ -6,7 +6,7 @@ The proposed topic was a basic ATM. Authenticate with your card and pin, select 
 
 The core functionality and entities are almost untouch (very basic). I have then included more test projects, application versioning, stylecop, cmd files to measure code coverage, deploy the application, etc.
 
-I took this simple project as an example from the folder, solution structure and use of tools. I wrote a [blog post](https://mamcer.github.io/2018-08-27-net-framework-sample-solution/) explaining details.
+> I took this simple project as an example from the folder, solution structure and use of tools. I wrote a [blog post](https://mamcer.github.io/2018-08-27-net-framework-sample-solution/) explaining details.
 
 ## Technologies
 
